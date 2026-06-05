@@ -1,0 +1,146 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación Especial - Daelyn y Valentina</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Fredoka',sans-serif;
+background:linear-gradient(180deg,#f7f0ff,#efe4ff);
+color:#4a285a;
+overflow-x:hidden;
+}
+.welcome{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+.welcome h1{font-size:2.5rem;margin-bottom:15px}
+.welcome p{font-size:1.1rem;margin-bottom:25px}
+.btn-open{
+background:#8a5bc4;color:#fff;text-decoration:none;
+padding:15px 30px;border-radius:40px;font-weight:bold;
+}
+.container{max-width:520px;margin:auto;padding:20px}
+.card{
+background:#fff;border-radius:30px;overflow:hidden;
+margin-bottom:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+.card img{width:100%;display:block}
+.content{padding:20px}
+h2{text-align:center;margin-bottom:15px;color:#5c2c73}
+.info{
+background:#f7f0ff;
+padding:12px;
+border-radius:15px;
+margin-top:10px;
+}
+.countdown{
+background:#fff;
+padding:18px;
+border-radius:20px;
+text-align:center;
+margin-bottom:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+#contador{font-size:1.3rem;font-weight:bold;color:#8a5bc4}
+.buttons{display:flex;flex-direction:column;gap:15px}
+.btn{
+display:block;text-align:center;
+padding:16px;border-radius:40px;
+color:#fff;text-decoration:none;font-weight:bold;
+}
+.whatsapp{background:#25D366}
+.maps{background:#8a5bc4}
+.footer{text-align:center;padding:30px 10px}
+.float{
+position:fixed;font-size:28px;opacity:.25;
+animation:float 5s ease-in-out infinite;
+pointer-events:none;
+}
+.f1{top:10%;left:5%}
+.f2{top:20%;right:5%}
+.f3{bottom:15%;left:8%}
+.f4{bottom:10%;right:8%}
+@keyframes float{
+50%{transform:translateY(-15px)}
+}
+</style>
+</head>
+<body>
+
+<div class="float f1">🌸</div>
+<div class="float f2">🐾</div>
+<div class="float f3">🐸</div>
+<div class="float f4">🧸</div>
+
+<section class="welcome">
+<h1>🎉 Dos Celebraciones Especiales 🎉</h1>
+<p>Daelyn y Valentina te invitan a compartir un día muy especial.</p>
+<a class="btn-open" href="#invitacion">Abrir Invitación</a>
+</section>
+
+<div class="container" id="invitacion">
+
+<div class="countdown">
+<h3>⏳ Falta para la celebración</h3>
+<div id="contador"></div>
+</div>
+
+<div class="card">
+<img src="img/daelyn_masha.png" alt="Daelyn">
+<div class="content">
+<h2>🧸 Daelyn</h2>
+<p>Te invita a celebrar su Bautizo y su Primer Cumpleaños.</p>
+<div class="info"><strong>📅 Fecha:</strong> 27 de junio de 2026</div>
+<div class="info"><strong>🕟 Hora:</strong> 4:30 PM</div>
+<div class="info"><strong>📍 Lugar:</strong> Calle Obsidiana Mz 356 Lt 7, Sección Elementos, Jardines de Morelos.</div>
+</div>
+</div>
+
+<div class="card">
+<img src="img/valentina_rana.png" alt="Valentina">
+<div class="content">
+<h2>🐸 Valentina</h2>
+<p>Te invita a celebrar sus 5 años.</p>
+<div class="info"><strong>📅 Fecha:</strong> 27 de junio de 2026</div>
+<div class="info"><strong>🕟 Hora:</strong> 4:30 PM</div>
+<div class="info"><strong>📍 Lugar:</strong> Calle Obsidiana Mz 356 Lt 7, Sección Elementos, Jardines de Morelos.</div>
+</div>
+</div>
+
+<div class="buttons">
+<a class="btn whatsapp" href="https://wa.me/525648107667?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20celebracion">📲 Confirmar asistencia</a>
+<a class="btn maps" target="_blank" href="https://maps.app.goo.gl/6g8Zos2Ems9DT7UJA?g_st=aw">📍 Ver ubicación</a>
+</div>
+
+<div class="footer">
+<h2>💜 ¡Te esperamos! 💜</h2>
+<p>Tu presencia hará este día aún más especial.</p>
+</div>
+
+</div>
+
+<script>
+const fechaEvento = new Date("June 27, 2026 16:30:00").getTime();
+setInterval(()=>{
+const ahora = new Date().getTime();
+const d = fechaEvento-ahora;
+const dias = Math.floor(d/(1000*60*60*24));
+const horas = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+const minutos = Math.floor((d%(1000*60*60))/(1000*60));
+document.getElementById("contador").innerHTML =
+dias+" días • "+horas+" horas • "+minutos+" min";
+},1000);
+</script>
+
+</body>
+</html>
